@@ -1,0 +1,67 @@
+@import "base_folder/base.scss";
+@import "variables.scss";
+
+body{
+	background-color: $primaryColour;
+}
+
+@mixin boxSize{
+	width: $width;
+	height: 100px;
+}
+
+#box1{
+	@include boxSize;
+	background-color: #0fb9b1;
+}
+
+#box2{
+	@include boxSize;
+	background-color: #20bf6b;
+}
+
+#box3{
+	@include boxSize;
+	background-color: #f7b731;
+}
+
+header{
+		background-color: darken($primaryColour, 20%);
+		nav{
+			ul{
+				list-style: none;
+				text-align: center;
+				li{
+					display: inline-block;
+					color:black;
+					padding: 1em;
+				}
+			}
+		}
+}
+
+footer{
+	background-color: lighten($primaryColour, 10%);
+	nav{
+		ul{
+			list-style: none;
+			text-align: right;
+			li{
+				display: inline-block;
+				color: black;
+				padding: 1em;
+			}
+		}
+	}
+}
+
+$boxCount : 3;
+@for $i from 1 through $boxCount{
+	#box#{$i}{
+		width: $width * $i;
+	}
+}
+
+// h1{
+// 	color: complement($primaryColour);
+// }
